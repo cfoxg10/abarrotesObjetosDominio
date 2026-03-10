@@ -1,6 +1,4 @@
-
 package com.mycompany.abarrotesobjetosdominio;
-
 /**
  *
  * @author user

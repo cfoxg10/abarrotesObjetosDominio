@@ -1,4 +1,4 @@
-
+package com.mycompany.abarrotesobjetosdominio;
 public class ProductoGranel extends Producto {
 
     private double cantidad;
@@ -54,3 +54,4 @@ public class ProductoGranel extends Producto {
     public String toString() {
         return super.toString() + "," + cantidad;
     }
+}

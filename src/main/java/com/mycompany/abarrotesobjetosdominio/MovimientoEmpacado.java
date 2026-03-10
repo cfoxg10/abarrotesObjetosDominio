@@ -1,5 +1,4 @@
-package com.abarrotes.objetosNegocio;
-
+package com.mycompany.abarrotesobjetosdominio;
 import java.time.LocalDate;
 
 public class MovimientoEmpacado extends Movimiento {
@@ -9,9 +8,9 @@ public class MovimientoEmpacado extends Movimiento {
         super();
         this.productoEmpacado = null;
     }
-
     public MovimientoEmpacado(String clave, LocalDate fecha, boolean procesado, ProductoEmpacado productoEmpacado) {
-        super(clave, fecha, procesado);
+        super(fecha, procesado);
+        this.cveMovimiento = clave;
         setProductoEmpacado(productoEmpacado);
     }
 

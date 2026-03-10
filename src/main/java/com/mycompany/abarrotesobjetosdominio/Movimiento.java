@@ -1,3 +1,4 @@
+package com.mycompany.abarrotesobjetosdominio;
 import java.time.LocalDate;
 public class Movimiento {
     private static int contador = 1;
@@ -5,6 +6,12 @@ public class Movimiento {
     LocalDate fecha = LocalDate.now();
     boolean procesado;
     // Constructor
+    public Movimiento(){
+        this.cveMovimiento = String.format("MV%03d", contador);
+        contador++;
+        this.fecha = LocalDate.now();
+        this.procesado = false;
+    }
     public Movimiento(LocalDate fecha, boolean procesado) {
         this.cveMovimiento = String.format("MV%03d", contador);
         contador++;
@@ -36,14 +43,14 @@ public class Movimiento {
         this.procesado = procesado;
     }
     @Override
-public boolean equals(Object obj) {
-    if (this == obj) {
-        return true;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Movimiento otro = (Movimiento) obj;
+        return cveMovimiento != null && cveMovimiento.equals(otro.cveMovimiento);
     }
-    if (obj == null || getClass() != obj.getClass()) {
-        return false;
-    }
-    Movimiento otro = (Movimiento) obj;
-    return cveMovimiento != null && cveMovimiento.equals(otro.cveMovimiento);
-}
 }
